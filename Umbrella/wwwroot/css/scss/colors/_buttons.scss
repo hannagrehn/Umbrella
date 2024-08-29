@@ -1,0 +1,60 @@
+// // .bg-dark {
+// //     @include button-colors($bg-color, $text-color, $hover-bg-color, $hover-text-color, $border-color: null, $border-hover-color: null)
+// // }
+
+// .btn-dark {
+//     @include button-colors(--color-dark, --color-light, --color-accent, --color-primary);
+// }
+
+// .btn-primary {
+//     @include button-colors(--color-primary, --color-secondary, --color-accent, --color-primary);
+// }
+
+// .btn-secondary{
+//     @include button-colors(--color-secondary, --color-primary, --color-accent, --color-primary);
+// }
+
+// .btn-accent{
+//     @include button-colors(--color-accent, --color-primary, --color-primary, --color-secondary);
+// }
+
+// .btn-gray{
+//     @include button-colors(--color-gray, --color-primary, --color-accent, --color-primary);
+// }
+
+// .btn-light{
+//     @include button-colors(--color-light, --color-primary, --color-accent, --color-primary, --color-primary);
+// }
+
+// .btn-menu{
+//     @include button-colors(--color-primary, --color-secondary, --color-accent, --color-primary);
+// }
+
+
+.btn-dark {
+    @include button-colors(var(--color-dark), var(--color-light), var(--color-primary), var(--color-light));
+}
+
+.btn-primary {
+    @include button-colors(var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+}
+
+.btn-secondary {
+    @include button-colors(var(--color-secondary), var(--color-primary), var(--color-accent), var(--color-secondary));
+}
+
+.btn-accent {
+    @include button-colors(var(--color-accent), var(--color-primary), var(--color-secondary), var(--color-accent));
+}
+
+.btn-gray {
+    @include button-colors(var(--color-gray), var(--color-primary), var(--color-accent), var(--color-gray));
+}
+
+.btn-light {
+    @include button-colors(var(--color-light), var(--color-primary), var(--color-accent), var(--color-light));
+}
+
+.btn-menu {
+    @include button-colors(var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+}

@@ -1,0 +1,56 @@
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin ultra-wide {
+    @media (min-width: 1920px) {
+        @content;
+    }
+}
+
+
+
+// use like this // we will get back to it later
+
+
+
+.container{
+    width: 100%;
+
+    @include tablet {
+        max-width: 720px;
+    }
+
+     @include desktop {
+        max-width: 1200px;
+    }
+
+     @include ultra-wide {
+        max-width: 1600px;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
+    }   
+
+    @include ultra-wide {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

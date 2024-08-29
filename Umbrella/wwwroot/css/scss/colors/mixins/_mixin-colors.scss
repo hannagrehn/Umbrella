@@ -1,0 +1,20 @@
+@mixin button-colors($bg-color, $text-color, $hover-bg-color, $hover-text-color, $border-color: null, $border-hover-color: null) {
+
+    background-color: $bg-color;
+    color: $text-color;
+    border-color: if($border-color, $border-color, $bg-color);
+    //if border color is not provided, use bg-color
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none !important;
+  
+    &:hover {
+        background-color: $hover-bg-color;
+        color: $hover-text-color;
+        border-color: if($border-hover-color, $border-hover-color, $border-hover-color);
+    }
+
+    &:hover, &:focus, &:active {
+        outline: none !important;
+    }
+}
