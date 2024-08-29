@@ -259,6 +259,10 @@ body {
   color: var(--color-default);
 }
 
+span {
+  color: var(--color-secondary);
+}
+
 a {
   color: var(--color-secondary);
 }
@@ -376,4 +380,28 @@ a:hover {
 }
 .btn-menu:hover, .btn-menu:focus, .btn-menu:active {
   outline: none !important;
+}
+
+h1 {
+  color: var(--color-primary);
+}
+
+h2 {
+  color: var(--color-primary);
+}
+
+h3 {
+  color: var(--color-secondary);
+}
+
+h4 {
+  color: var(--color-primary);
+}
+
+h5 {
+  color: var(--color-primary);
+}
+
+h6 {
+  color: var(--color-secondary);
 }
