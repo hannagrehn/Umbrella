@@ -1,0 +1,49 @@
+.topbar{
+    background-color: var(--color-primary);
+    color: var(--color-gray);
+
+    .topbar-stuff{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    p{
+        padding-top: 1.3rem;
+    }
+
+    a{
+        color: var(--color-gray);
+        padding: 1.3rem 1rem;
+
+        &:hover{
+            color: var(--color-secondary);
+        }
+    }
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+
+    .navbar-objects{
+        display: none;
+        padding-top: 1rem;
+
+        @include desktop{
+            display: flex;
+        }
+        
+        a{
+            padding-right: 2rem;
+   
+            &:hover{
+                color: var(--color-secondary) !important;
+            }
+        }
+    }
+
+    .fa-solid{
+        padding-top: 1rem;
+    }
+}

@@ -1,0 +1,44 @@
+#hero-slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      min-height: 400px;
+      object-fit: cover;
+      z-index: -1;
+    }
+  
+    .container {
+
+      .hero-content {
+            @include desktop {
+            max-width: 50%; 
+            }
+    
+            h1 {          
+                @include desktop {
+                    max-width: 100%; 
+                    text-align: left; 
+                    margin-top: 3rem;
+                }
+            }
+    
+            a {
+                margin-bottom: 1rem;
+
+                @include desktop {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}
+  
