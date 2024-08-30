@@ -4,13 +4,14 @@
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
-	var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
-	var sinatureImage = Model?.Value<IPublishedContent>("aboutSinatureImage")?.Url() ?? "";
+	var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroud")?.Url() ?? "";
+	var sinatureImage = Model?.Value<IPublishedContent>("aboutSignature")?.Url() ?? "";
 }
 
 
 <section id="hero-slider" class="hero">
 	<div class="background" style="background-image:url(@backgroundImage); background-size: cover; background-position: 60%"></div>
+  <img class="background" src="@backgroundImage" alt="pic here" />
 	<div class="container">
 		<div class="hero-content">
 			<h1 class="headline">@Model?.Value("heroHeadline")</h1>
@@ -33,7 +34,7 @@
 			<p>@Model.Value("aboutSmallText")</p>
 			<div class="signature-container">
 				<div class="signature">
-					<img class="signature-image" src="" alt="@Model.Value("aboutSignatureText")" />
+					<img class="signature-image" src="@sinatureImage" alt="@Model.Value("aboutSignatureText")" />
 					<div class="clarification">
 						<p class="name">@Model.Value("aboutSignatureText")</p>
 					</div>
