@@ -995,3 +995,64 @@ h6 {
     width: 100%;
   }
 }
+
+#mr-smile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+#mr-smile .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+#mr-smile .content .east-side {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+#mr-smile .content .east-side .smol-things .smol-thing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#mr-smile .content .east-side .smol-things .smol-thing i {
+  padding-right: 1rem;
+}
+@media (min-width: 1400px) {
+  #mr-smile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+#service-header .service-headerr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+@media (min-width: 1400px) {
+  #service-header .service-headerr {
+    padding-bottom: 5rem;
+    padding-top: 4rem;
+  }
+}

@@ -1,12 +1,29 @@
 #mr-smile{
+    display: flex;
+    flex-direction: row;     
 
-    display: grid;
+    .content{
+        display: flex;
+        flex-direction: row;    
+        
+        .east-side{
+            padding-top: 3rem;
+            padding-bottom: 3rem;
 
-     @include desktop{
+            .smol-things{
+                
+                .smol-thing{
+                    display: flex;
+
+                    i{
+                        padding-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop{
         display: flex;
     }
-    .east-side{
-        display: grid;   
-    }
-
 }

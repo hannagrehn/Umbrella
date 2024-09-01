@@ -1,0 +1,15 @@
+#service-header{
+    
+    .service-headerr{
+        @include center;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+
+        @include desktop{
+            padding-bottom: 5rem;
+            padding-top: 4rem;
+        }             
+    }
+}
