@@ -1,0 +1,13 @@
+#single-service-header{
+    
+    .single-service-headerr{
+        @include center;
+        display:grid;
+        padding-bottom: 2rem;
+
+        @include desktop{
+            padding-bottom: 5rem;
+            padding-top: 4rem;
+        }             
+    }
+}
