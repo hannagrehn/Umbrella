@@ -8,6 +8,7 @@
     .east-side{
         display: grid;
         grid-template-columns: 1fr;
+        grid-row: inherit;
 
     }
 
