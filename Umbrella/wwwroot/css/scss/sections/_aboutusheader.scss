@@ -1,0 +1,13 @@
+#about-us-header{
+    
+    .about-header{
+        @include center;
+        display:grid;
+        padding-bottom: 2rem;
+
+        @include desktop{
+            padding-bottom: 5rem;
+            padding-top: 4rem;
+        }             
+    }
+}

@@ -1,0 +1,13 @@
+#mr-smile{
+
+    display: grid;
+
+     @include desktop{
+        display: flex;
+    }
+    .east-side{
+        display: grid;
+
+    }
+
+}

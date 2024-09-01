@@ -1,0 +1,27 @@
+#partners {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .partner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding-top: 3.6rem;
+            padding-bottom: 3.6rem;
+        }
+
+        img {
+            object-fit: contain;
+            max-width: 100%; 
+        }
+    }
+}

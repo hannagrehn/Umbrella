@@ -1,0 +1,46 @@
+#tina-fox-text {
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row; 
+            justify-content: space-between; 
+        }
+
+        @include desktop {
+            padding-bottom: 5rem; 
+        }
+
+        .to-the-left {
+            flex: 1; 
+
+            @include tablet {
+                padding-right: 3rem; 
+            }
+            @include desktop {
+                padding-right: 3rem; 
+            }
+
+            img {
+                max-width: 100%; 
+                height: auto; 
+                display: block;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .to-the-right {
+            flex: 2; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .cursive-text {
+                font-style: italic;
+                font-size: 1.2rem; 
+                margin-bottom: 1rem; 
+            }          
+        }
+    }
+}

@@ -12,12 +12,14 @@
     }
 
     a{
+       
         color: var(--color-gray);
         padding: 1.3rem 1rem;
 
         &:hover{
             color: var(--color-secondary);
         }
+
     }
 }
 

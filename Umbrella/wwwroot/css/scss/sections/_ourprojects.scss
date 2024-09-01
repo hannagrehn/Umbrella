@@ -1,0 +1,23 @@
+#ourprojects{
+    .top-text{
+        padding-top: 5rem;
+    }
+
+    .cards{
+
+        display: grid;
+        grid-template-columns: 1fr;
+        @include center;
+
+        @include tablet{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include desktop{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);         
+        }
+
+    }
+}
