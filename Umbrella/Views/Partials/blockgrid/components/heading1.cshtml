@@ -3,9 +3,9 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
-    var headlineContent = Model?.Value<sting>("headlineContent");
+    var headlineContent = Model?.Value<string>("headlineContent");
 }
 
 @if (!string.IsNullOrEmpty(headlineContent)) {
-    <h1>@headlinehContent</h1>
+    <h1>@headlineContent</h1>
 }
