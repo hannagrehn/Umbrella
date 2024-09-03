@@ -3,9 +3,18 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
-    var headlineContent = Model?.Value<sting>("headlineContent");
+    var richTextContent = Model?.Content.Value("richTextContent") ?? null;
 }
 
-@if (!string.IsNullOrEmpty(headlineContent)) {
-    <h1>@headlinehContent</h1>
+@if (!string.IsNullOrEmpty(richTextContent)) {
+    <div class="content">
+        @richTextContent
+    </div>
 }
+
+
+
+
+
+
+
