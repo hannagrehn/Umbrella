@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
-    var headlineContent6 = Model?.Value<sting>("headlineContent6");
+    var headlineContent6 = Model?.Content.Value<string>("headlineContent6");
 }
 
 @if (!string.IsNullOrEmpty(headlineContent6)) {

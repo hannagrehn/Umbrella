@@ -3,7 +3,7 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
-    var paragraphContent = Model?.Value<sting>("paragraphContent");
+    var paragraphContent = Model?.Content.Value<string>("paragraphContent");
 }
 
 @if (!string.IsNullOrEmpty(paragraphContent)) {
