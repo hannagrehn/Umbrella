@@ -410,6 +410,10 @@ h6 {
   background-color: var(--color-primary);
   color: var(--color-gray);
 }
+.topbar .address {
+  padding-top: 1.1rem;
+  padding-bottom: 0rem;
+}
 .topbar .topbar-stuff {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -417,9 +421,6 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-.topbar p {
-  padding-top: 1.3rem;
 }
 .topbar a {
   color: var(--color-gray);
@@ -467,39 +468,60 @@ h6 {
 }
 
 #hero-slider {
-  position: relative;
   width: 100%;
   height: auto;
   overflow: hidden;
 }
-#hero-slider .background {
+#hero-slider .img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 10%;
   height: auto;
   min-height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
 }
+#hero-slider .container {
+  position: relative;
+  z-index: 1;
+}
 @media (min-width: 1400px) {
-  #hero-slider .container .hero-content {
-    max-width: 50%;
+  #hero-slider .container {
+    margin-top: -25rem;
   }
 }
 @media (min-width: 1400px) {
-  #hero-slider .container .hero-content h1 {
+  #hero-slider .container h1 {
     max-width: 100%;
-    text-align: left;
     margin-top: 3rem;
   }
 }
-#hero-slider .container .hero-content a {
+#hero-slider .container a {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 15px 40px;
+  border: 1px solid;
+  font-size: 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none !important;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  background-color: var(--color-primary);
   margin-bottom: 1rem;
 }
+#hero-slider .container a:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
 @media (min-width: 1400px) {
-  #hero-slider .container .hero-content a {
+  #hero-slider .container a {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
@@ -510,7 +532,6 @@ h6 {
 }
 #about-us img {
   padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 @media (min-width: 1400px) {
   #about-us .container h6 {
@@ -526,6 +547,37 @@ h6 {
   #about-us .container p {
     padding-bottom: 4rem;
   }
+}
+
+#hej-fan {
+  background-color: red;
+  color: purple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+#hej-fan .container {
+  background-color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+#hej-fan .container .dynamic-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 #our-services .container {
