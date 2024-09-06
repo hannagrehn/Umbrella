@@ -1,5 +1,11 @@
-#services{
+#our-services{
     .container{
+        text-align: center;
+        .container{
+            border: 1px solid black;
+            
+        }
+
         .top-text{
             text-align: center;
             padding-top: 2rem;          
@@ -42,5 +48,28 @@
                 }
             }
         }
+    }
+}
+
+#the-services{
+
+    .container{
+        border: 1px solid black;
+        display: flex;
+
+        h4{
+            color: red;
+        }
+        
+
+        .container{
+            border: 1px solid black;
+            background-color: red;
+
+            h4{
+                color: blue;
+            }
+        }
+
     }
 }

@@ -6,6 +6,7 @@
     var quoteContent = Model?.Content.Value<string>("quoteContent");
 }
 
-@if (!string.IsNullOrEmpty(quoteContent)) {
-    <i>@quoteContent</i>
+@if (!string.IsNullOrEmpty(quoteContent))
+{
+    <blockquote>@quoteContent</blockquote>
 }
