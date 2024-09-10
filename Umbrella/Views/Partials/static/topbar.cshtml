@@ -10,13 +10,7 @@
 
 <div id="header" class="topbar">
     <div class="container topbar-stuff">
-
-        <div class="address">@officeLocation</div>
-        
-        <div class="social">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
+        <div class="address">@officeLocation</div>      
+        @await Html.PartialAsync("socialmedia.cshtml")
     </div>
 </div>
