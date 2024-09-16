@@ -2,5 +2,13 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
-    ViewBag.Title = Model?.Name ?? null;
+    ViewBag.Title = Model.Name;
 }
+
+<section class="service-details">
+    <div class="container">
+        @Model.Value("pageContent")
+    </div>
+</section>
+
+<!-- kanske en sidomeny och sånt, allt här -->
