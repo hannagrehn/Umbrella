@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.BLocks.BlocklistItem>
+@using ContentModels Umbraco.Cms.Web.Common.PublishedModels;
+
+@{	
+	var buttonText = Model?.Content<string>("buttonText");
+	var buttonType = Model?.Content<string>("buttonType");
+}
+
+<div id="_@buttonText" class="form-input-group">
+    <button type="@buttonType" class="form-button btn-submit">@buttonText</button>
+</div>
