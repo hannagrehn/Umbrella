@@ -1,5 +1,5 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactPage>;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "mainLayout.cshtml";
@@ -9,10 +9,6 @@
 <section id="contact-us">
     <div class="container">
         <h1>@ViewBag.Title</h1>
-        <h2>there is no spoon</h2>
-
-        <form onsubmit="handleContactFormSubmit(event)" novalidate>
-            @Html.GetBlockListHtml(Model.ContactForm)
-        </form>
+        <h2>there is no spoon</h2> 
     </div>
 </section>
