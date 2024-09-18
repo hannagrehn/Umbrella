@@ -14,6 +14,12 @@
     var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
 }
 
+
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
 <section id="our-services">
     <div class="container">
         @if (!string.IsNullOrEmpty(Model?.Value("customHeadline").ToString())) {
@@ -53,11 +59,11 @@
 
                 @if (currentPage > 1)
                 {
-                    <a href="?page=@(currentPage - 1)" class="change">PREV</a>
+                    <h5><a href="?page=@(currentPage - 1)" class="change">Prev</a></h5>
                 }
                 else
                 {
-                    <span class="change inactive">PREV</span>
+                    <h5><span class="change inactive">Prev</span></h5>
                 }
 
                 <ul class="pages">
@@ -71,16 +77,14 @@
 
                 @if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
                 {
-                   <a class="change" href="?page=@(currentPage + 1)">NEXT</a> 
+                   <h5><a class="change" href="?page=@(currentPage + 1)">Next</a> </h5>
                 }
                 else 
                 {
-                    <span class="change inactive">NEXT</span>
+                    <h5><span class="change inactive">Next</span></h5>
                 }
             </div>
         </section>
-
-
     </div>
 </section>
 

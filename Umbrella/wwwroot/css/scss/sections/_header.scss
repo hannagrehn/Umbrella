@@ -6,29 +6,38 @@
         padding-top: 1.1rem;
         padding-bottom: 0rem;
     }
+    
 
     .topbar-stuff{
+       
         display: flex;
         justify-content: space-between;
-    }
 
-    
-    a{
-       
-        color: var(--color-gray);
-        padding: 1.3rem 1rem;
+        .social-media{
+              
+            .socialmedia-item{
+                padding-right: 1rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;              
 
-        &:hover{
-            color: var(--color-secondary);
+                &:hover{
+                    color: var(--color-accent);
+                }
+
+            }
         }
-
     }
+    
 }
 
 .navbar{
     display: flex;
     justify-content: space-between;
     padding: 1rem 1rem;
+
+    .search{
+        padding-top: 1rem;
+    }
 
     .navbar-objects{
         display: none;
@@ -47,7 +56,4 @@
         }
     }
 
-    .fa-solid{
-        padding-top: 1rem;
-    }
 }

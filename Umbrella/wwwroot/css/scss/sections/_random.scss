@@ -1,0 +1,29 @@
+.page-title{
+
+    .container{
+        @include center;
+        display: flex;
+        flex-direction: column;
+        
+
+        h1{
+            padding-top: 2rem;
+
+        }
+
+        .breadcrumb{         
+            padding-bottom: 2rem;
+        }
+
+        ul{
+            list-style-type: none;
+            display: flex;
+
+            span{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            
+        }
+    }
+}

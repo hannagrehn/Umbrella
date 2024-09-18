@@ -20,7 +20,7 @@
         z-index: 1;
 
         @include desktop {
-            margin-top: -25rem;
+            margin-top: -35rem;
 
         }
    
@@ -38,11 +38,11 @@
                 margin-bottom: 1rem;
 
                 @include desktop {
-                margin-top: 3rem;
+                margin-top: 1rem;
                 margin-bottom: 3rem;
                 }
             }
         
     }
 }
-  
+

@@ -5,28 +5,45 @@
 @inject IPublishedUrlProvider PublishedUrlProvider
 
 @{ 
-    var selection = Model.Ancestors().ToArray(); 
-    var homePageDisplayName = "Home";
-    var isFirstItem = true;
+    var homePageDisplayName = "Home";    
+    var selection = Model.Ancestors().Where(x => x.Level > 1).Take(2).Reverse().ToArray(); 
+    var totalItems = selection.Length + 1; 
+    var currentItem = 0;
 }
 
 <section class="page-title">
     <div class="container">
         <h1>@ViewBag.Title</h1>
 
-        @if (selection?.Length > 0)
-        {
-            <ul clss="breadcrum">
-                @foreach (var item in selection.OrderBy(x => x.Level))
+        <ul class="breadcrumb">
+            <li><a href="@Url.Content("~/")">@homePageDisplayName</a></li>
+
+            @if (selection.Length > 0 || !string.IsNullOrEmpty(Model.Name))
+            {
+                <span> > </span>
+            }
+
+            @for (var i = 0; i < selection.Length; i++)
+            {
+                var item = selection[i];
+                <li>
+                    <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                </li>
+
+                @if (i < selection.Length - 1) 
                 {
-                    var displayName = isFirstItem ? homePageDisplayName : item.Name;
-                    <li><a href="@item.Url(PublishedUrlProvider)">@displayName</a></li>
-                    isFirstItem = false;
+                    <span> > </span>
+                }
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Name))
+            {
+                @if (selection.Length > 0)
+                {
+                    <span> > </span> 
                 }
                 <li class="active">@Model.Name</li>
-            </ul>          
-        }
+            }
+        </ul>          
     </div>
 </section>
-
-

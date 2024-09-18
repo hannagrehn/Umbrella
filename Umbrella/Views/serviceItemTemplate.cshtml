@@ -5,10 +5,17 @@
     ViewBag.Title = Model.Name;
 }
 
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
 <section class="service-details">
     <div class="container">
         @Model.Value("pageContent")
     </div>
 </section>
 
-<!-- kanske en sidomeny och sånt, allt här -->
+
+
+
