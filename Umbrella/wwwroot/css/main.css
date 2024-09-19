@@ -531,8 +531,8 @@ h6 {
 #about-us h6 {
   padding-top: 1rem;
 }
-#about-us img {
-  padding-top: 1rem;
+#about-us .background-image {
+  padding-top: 10rem;
 }
 @media (min-width: 1400px) {
   #about-us .container h6 {
@@ -543,42 +543,11 @@ h6 {
   }
   #about-us .container img {
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 12.5rem;
   }
   #about-us .container p {
     padding-bottom: 4rem;
   }
-}
-
-#hej-fan {
-  background-color: red;
-  color: purple;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-#hej-fan .container {
-  background-color: blue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-#hej-fan .container .dynamic-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 #our-services .container {
@@ -1226,6 +1195,146 @@ h6 {
 .page-title .container ul span {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+#trusted {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+#trusted .background-image {
+  margin-top: 5rem;
+  display: none;
+}
+@media (min-width: 1400px) {
+  #trusted .background-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+#trusted .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1;
+}
+#trusted .container h2 {
+  margin-top: 2rem;
+}
+#trusted .container a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border: 1px solid var(--color-primary);
+}
+#trusted .container img {
+  display: none;
+}
+@media (min-width: 1400px) {
+  #trusted .container img {
+    display: block;
+  }
+}
+
+#trusted {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+#trusted .background-image {
+  margin-top: 5rem;
+  display: none;
+}
+@media (min-width: 1400px) {
+  #trusted .background-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+#trusted .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1;
+}
+#trusted .container h2 {
+  margin-top: 2rem;
+}
+#trusted .container a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border: 1px solid var(--color-primary);
+}
+#trusted .container img {
+  display: none;
+}
+@media (min-width: 1400px) {
+  #trusted .container img {
+    display: block;
+  }
 }
 
 .umb-block-grid__layout-container {

@@ -1,9 +1,10 @@
 #about-us{
+   
     h6{
         padding-top: 1rem;
     }
-    img{
-        padding-top: 1rem;      
+    .background-image{
+        padding-top: 10rem;    
     }
 
     @include desktop{
@@ -20,7 +21,7 @@
 
             img{
                 padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
+                padding-bottom: 12.5rem;
             }
 
             p{
@@ -29,23 +30,4 @@
             }
         }        
     }  
-}
-
-#hej-fan{
-    background-color: red;
-    color: purple;
-    display: flex;
-    flex-direction: row;
-  
-
-    .container{
-        background-color: blue;
-        display: flex;
-        flex-direction: row;
-
-        .dynamic-container{
-            display: flex;
-            flex-direction: row;
-        }
-    }
 }
