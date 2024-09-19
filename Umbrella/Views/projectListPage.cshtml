@@ -4,55 +4,54 @@
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
-    var selection = Umbraco!.Content(Guid.Parse("e7a81042-c5a0-4340-ad95-10c546f2c0a6"))!.ChildrenOfType("serviceItemTemplate")!.Where(x => x.IsVisible());
+    var selection = Umbraco!.Content(Guid.Parse("1621f532-a9b9-4e92-8907-0fa867697b45"))!.ChildrenOfType("projectItemTemplate")!.Where(x => x.IsVisible());
 
-    var itemsPerPage = 6;
+    var itemsPerPage = 4;
     if (!int.TryParse(Context.Request.Query["page"], out int currentPage))
         currentPage = 1;
 
     var totalItems = selection?.Count() ?? 0;
     var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
+    
 }
-
 
 @if (!string.IsNullOrEmpty(ViewBag.Title))
 {
     @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
 }
 
-<section id="our-services">
+
+<section id="our-projects">
     <div class="container">
-        @if (!string.IsNullOrEmpty(Model?.Value("customHeadline").ToString())) {
-            <div class="headline">
-                <h2 class="title">@Model.Value("customHeadline")</h2>
-            </div>
-        }
-
-
-        <div class="services">
+        <div class="projects">
             @if (pagedItems != null){
                 @foreach (var item in pagedItems) {
 
                 var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
                 var premable = item?.Value<string>("premable") ?? "";
+                var date = item?.Value<string>("date") ?? "";
 
                 <a href="@item.Url()">
-                    <div class="item">
-                        <div class="header">
-                            <h4>@item.Name()</h4>
-                        </div>                     
-                        <div class="body">
+                    <div class="projects-item">                      
+                        <div class="projects-body">
                             <img src="@image" alt="item.Name">
                         </div>
-                        <div class="footer-service">
-                            <p>@premable</p>
-                        </div>
+                        <div class="text">
+                            <div class="projects-header">
+                                <h4>@item.Name()</h4>
+                            </div>
+                            <div class="date">
+                                <p>@date</p>
+                            </div>
+                            <div class="projects-footer">
+                                <p>@premable</p>
+                            </div>
+                        </div>                       
                     </div>
                 </a>
             }
             }          
         </div>
-
 
         <section class="pagination">
             <div class="container">

@@ -1,23 +1,110 @@
-#ourprojects{
-    .top-text{
-        padding-top: 5rem;
-    }
+#our-projects{
+    .container{
+        text-align: center;
 
-    .cards{
-
-        display: grid;
-        grid-template-columns: 1fr;
-        @include center;
-
-        @include tablet{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .pagination {
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding: 20px;
+        
+                .change {                              
+                    text-decoration: none;
+                    transition: background-color 0.3s;
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    color: var(--color-dark);
+        
+                    &:hover {                 
+                        color: var(--color-secondary);
+                    }
+        
+                    &.inactive {
+                        color: var(--color-accent);
+                        pointer-events: none;
+                    }
+                }
+                   
+                .pages {
+                    display: flex;
+                    justify-content: center;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;                  
+        
+                    .number {
+                       
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 1rem;
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            border: 1px solid gray;
+                            border-radius: 50%;
+                            text-align: center;
+                            font-size: 16px;
+                            color: black;
+                            text-decoration: none;
+                                                     
+                            &:hover {             
+                                background-color: var(--color-gray);
+                            }
+                        }                       
+                    }
+                }
+            }
         }
 
-        @include desktop{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);         
-        }
 
+        .projects {
+
+            .projects-item {
+
+                border: 1px solid #00000025;     
+                max-width: 50rem;     
+                max-height: 20rem;   
+                margin: 1rem;
+                position: relative;
+                display: flex; 
+                align-items: stretch; 
+                overflow: hidden;
+               
+        
+                img {                                  
+                    object-fit: cover; 
+                }
+        
+                .text {
+                    width: 100%;
+                    padding-left: 1.8rem;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+
+        
+                    .projects-header {
+                        padding-top: 1rem;  
+                        text-align: left;                                                           
+                    }
+        
+                    .date {
+                        color: gray;
+                        justify-content: left;
+                        align-content: left;
+                    }
+        
+                    .projects-footer {
+                        justify-content: left;
+                        padding: 1.5rem 0;
+                        color: var(--color-dark);
+                        text-align: left;
+                    }
+                }
+            }
+        }     
     }
 }
