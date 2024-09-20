@@ -59,52 +59,81 @@
             }
         }
 
-
         .projects {
-
             .projects-item {
-
-                border: 1px solid #00000025;     
-                max-width: 50rem;     
-                max-height: 20rem;   
+                border-bottom: 1px solid #00000025;
                 margin: 1rem;
-                position: relative;
-                display: flex; 
-                align-items: stretch; 
-                overflow: hidden;
-               
+                padding-bottom: 1rem;
+                display: block; 
+                max-width: 100%; 
         
-                img {                                  
-                    object-fit: cover; 
+                img {
+                    width: 100%; 
+                    height: auto; 
+                    margin-bottom: 1rem;
                 }
         
                 .text {
                     width: 100%;
-                    padding-left: 1.8rem;
+                    text-align: center; 
+                    padding-left: 0;
                     display: flex;
                     flex-direction: column;
-                    text-align: left;
-
         
                     .projects-header {
-                        padding-top: 1rem;  
-                        text-align: left;                                                           
+                        padding-top: 1rem;
+                        text-align: center;
                     }
         
                     .date {
                         color: gray;
-                        justify-content: left;
-                        align-content: left;
+                        justify-content: center; 
+
+                        i{
+                            padding-right: 0.6rem;
+                        }                 
                     }
         
                     .projects-footer {
-                        justify-content: left;
-                        padding: 1.5rem 0;
+                        justify-content: center; 
                         color: var(--color-dark);
-                        text-align: left;
+                        text-align: center;
                     }
                 }
             }
-        }     
+        
+            
+            @include desktop {
+                .projects-item {
+                    display: flex; 
+                    align-items: stretch;
+                    max-width: 50rem;
+                    max-height: 15rem; 
+                    padding-bottom: 2rem;
+        
+                    img {
+                        width: 100%;
+                        height: 100%; 
+                        object-fit: cover; 
+                        overflow: hidden;
+                    }
+        
+                    .text {
+                        text-align: left;
+                        padding-left: 1.8rem;
+
+                        .projects-header{
+                            text-align: left;
+                        }
+
+                        .projects-footer{
+                            text-align: left;
+                        }
+                    
+                    }
+                }
+            }
+        }
+        
     }
 }

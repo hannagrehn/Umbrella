@@ -3,6 +3,21 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+
+    .background-image{
+        display: none;
+
+        position: absolute;
+        overflow: hidden;
+       
+        @include desktop{
+            display: block;
+            position: absolute;
+            top: 0;
+            align-items: center;
+            @include center;
+        }
+    }
   
     .img {
       position: absolute;
@@ -18,11 +33,6 @@
     .container {
         position: relative;
         z-index: 1;
-
-        @include desktop {
-            margin-top: -35rem;
-
-        }
    
             h1 {          
                 @include desktop {
