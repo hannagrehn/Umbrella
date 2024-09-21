@@ -1482,6 +1482,21 @@ h6 {
      object-fit: cover;
 }
 
+@media (min-width: 768px) {
+  #tina-fox img {
+    padding-right: 5rem;
+  }
+}
+
+#great-reviews .backgound-image p {
+  margin: 0.3em 0;
+}
+#great-reviews .backgound-image .background-image {
+  right: 0;
+  height: 100%;
+  width: 50%;
+}
+
 #trusted {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1735,6 +1750,21 @@ h6 {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  #tina-fox img {
+    padding-right: 5rem;
+  }
+}
+
+#great-reviews .backgound-image p {
+  margin: 0.3em 0;
+}
+#great-reviews .backgound-image .background-image {
+  right: 0;
+  height: 100%;
+  width: 50%;
 }
 
 .umb-block-grid__layout-container {

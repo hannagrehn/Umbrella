@@ -165,5 +165,27 @@
     }
 }
 
+#tina-fox{
+    @include tablet{
+        img{
+            padding-right: 5rem;
+        }
+    }
+}
+
+#great-reviews{
+    .backgound-image{
+        
+        p{
+            margin: 0.3em 0;
+        }
+        .background-image{
+            right: 0;
+            height: 100%;
+            width: 50%;
+        }  
+    }
+}
+
 
 
