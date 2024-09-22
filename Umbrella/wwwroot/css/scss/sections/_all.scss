@@ -174,18 +174,145 @@
 }
 
 #great-reviews{
-    .backgound-image{
-        
-        p{
-            margin: 0.3em 0;
-        }
-        .background-image{
+
+    .background-image{
+        display: none;
+
+        @include desktop{
+            display: block;
+            position: absolute;
+
+            top: 0;
             right: 0;
+
             height: 100%;
-            width: 50%;
-        }  
+            width: 50%;     
+            overflow: hidden;      
+        }           
+    }
+
+    .container{
+
+        padding-bottom: 4rem;
+
+        h6{
+            padding-top: 3rem;
+        }
+
+
     }
 }
+
+
+#recent-projects {
+
+    .projects {
+        @include center;
+       
+
+        .projects-item {
+            display: block;  
+            max-width: 30rem;
+            max-height: 30rem;
+            width: 30rem;
+            height: 30rem;
+            position: relative;  
+            @include center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                width: 30rem;
+                height: 30rem;
+                object-fit: cover;
+                            
+            }
+
+            .text {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: #4f59556b;
+                padding: 2.2rem;
+                color: var(--color-light);
+                text-align: left;
+
+                .projects-header {
+                    text-align: left;
+                    color: var(--color-light);
+                }
+
+                h4{
+                    color: var(--color-light);
+                    font-weight: 400;
+                }
+
+                .date {
+                    color: var(--color-light);
+                    justify-content: left; 
+
+                    i{
+                        padding-right: 0.6rem;
+                    }                 
+                }
+
+                .projects-footer {
+                    text-align: left;
+                }
+            }
+        }
+
+        @include desktop {
+            @include center;
+            .projects-item {
+                display: block;  
+                position: relative;  
+                @include center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    width: 30rem;
+                    height: 30rem;
+                    object-fit: cover;
+                }
+
+                .text {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    background: #4f59556b;
+                    padding: 1.2rem;
+                    color: var(--color-light);
+                    text-align: left;
+                    padding: 2rem;
+
+                    .projects-header {
+                        text-align: left;
+                        color: var(--color-light);
+                    }
+
+                    .date {
+                        color: var(--color-light);
+                        justify-content: left; 
+
+                        i{
+                            padding-right: 0.6rem;
+                        }                 
+                    }
+
+                    .projects-footer {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
 
 
 

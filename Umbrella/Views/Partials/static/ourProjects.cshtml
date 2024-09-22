@@ -10,8 +10,8 @@
 <section id="recent-projects">
     <div class="container">
         <div class="projects">
-            @if (pagedItems != null){
-                @foreach (var item in pagedItems) {
+            @if (selection != null){
+                @foreach (var item in selection) {
 
                 var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
                 var premable = item?.Value<string>("premable") ?? "";

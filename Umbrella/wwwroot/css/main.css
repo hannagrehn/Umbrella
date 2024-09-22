@@ -959,69 +959,6 @@ h6 {
   margin-bottom: 1rem;
 }
 
-#great-reviews {
-  position: relative;
-  background-color: var(--color-gray);
-}
-#great-reviews .container {
-  z-index: 2;
-}
-#great-reviews .to-the-left-to-the-left {
-  padding-top: 3rem;
-  max-width: 50%;
-  -ms-flex-item-align: left;
-      align-self: left;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-}
-#great-reviews .to-the-left-to-the-left i {
-  padding-bottom: 1.5rem;
-}
-#great-reviews .to-the-right-to-the-right {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-top: 1rem;
-}
-#great-reviews .to-the-right-to-the-right img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media (min-width: 768px) {
-  #great-reviews {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  #great-reviews .to-the-left-to-the-left {
-    max-width: 50%;
-  }
-  #great-reviews .to-the-right-to-the-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    margin-top: 0;
-  }
-  #great-reviews .to-the-right-to-the-right img {
-    height: 100%;
-  }
-}
-@media (min-width: 1400px) {
-  #great-reviews .to-the-left-to-the-left {
-    padding-top: 5rem;
-    padding-bottom: 4rem;
-  }
-}
-
 #our-expert .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1488,13 +1425,155 @@ h6 {
   }
 }
 
-#great-reviews .backgound-image p {
-  margin: 0.3em 0;
+#great-reviews .background-image {
+  display: none;
 }
-#great-reviews .backgound-image .background-image {
-  right: 0;
+@media (min-width: 1400px) {
+  #great-reviews .background-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+  }
+}
+#great-reviews .container {
+  padding-bottom: 4rem;
+}
+#great-reviews .container h6 {
+  padding-top: 3rem;
+}
+
+#recent-projects .projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+#recent-projects .projects .projects-item {
+  display: block;
+  max-width: 30rem;
+  max-height: 30rem;
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+#recent-projects .projects .projects-item img {
+  width: 100%;
   height: 100%;
-  width: 50%;
+  width: 30rem;
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#recent-projects .projects .projects-item .text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(79, 89, 85, 0.4196078431);
+  padding: 2.2rem;
+  color: var(--color-light);
+  text-align: left;
+}
+#recent-projects .projects .projects-item .text .projects-header {
+  text-align: left;
+  color: var(--color-light);
+}
+#recent-projects .projects .projects-item .text h4 {
+  color: var(--color-light);
+  font-weight: 400;
+}
+#recent-projects .projects .projects-item .text .date {
+  color: var(--color-light);
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+#recent-projects .projects .projects-item .text .date i {
+  padding-right: 0.6rem;
+}
+#recent-projects .projects .projects-item .text .projects-footer {
+  text-align: left;
+}
+@media (min-width: 1400px) {
+  #recent-projects .projects {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #recent-projects .projects .projects-item {
+    display: block;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #recent-projects .projects .projects-item img {
+    width: 100%;
+    height: 100%;
+    width: 30rem;
+    height: 30rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #recent-projects .projects .projects-item .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(79, 89, 85, 0.4196078431);
+    padding: 1.2rem;
+    color: var(--color-light);
+    text-align: left;
+    padding: 2rem;
+  }
+  #recent-projects .projects .projects-item .text .projects-header {
+    text-align: left;
+    color: var(--color-light);
+  }
+  #recent-projects .projects .projects-item .text .date {
+    color: var(--color-light);
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  #recent-projects .projects .projects-item .text .date i {
+    padding-right: 0.6rem;
+  }
+  #recent-projects .projects .projects-item .text .projects-footer {
+    text-align: left;
+  }
 }
 
 #trusted {
@@ -1758,13 +1837,155 @@ h6 {
   }
 }
 
-#great-reviews .backgound-image p {
-  margin: 0.3em 0;
+#great-reviews .background-image {
+  display: none;
 }
-#great-reviews .backgound-image .background-image {
-  right: 0;
+@media (min-width: 1400px) {
+  #great-reviews .background-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+  }
+}
+#great-reviews .container {
+  padding-bottom: 4rem;
+}
+#great-reviews .container h6 {
+  padding-top: 3rem;
+}
+
+#recent-projects .projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+#recent-projects .projects .projects-item {
+  display: block;
+  max-width: 30rem;
+  max-height: 30rem;
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+#recent-projects .projects .projects-item img {
+  width: 100%;
   height: 100%;
-  width: 50%;
+  width: 30rem;
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#recent-projects .projects .projects-item .text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(79, 89, 85, 0.4196078431);
+  padding: 2.2rem;
+  color: var(--color-light);
+  text-align: left;
+}
+#recent-projects .projects .projects-item .text .projects-header {
+  text-align: left;
+  color: var(--color-light);
+}
+#recent-projects .projects .projects-item .text h4 {
+  color: var(--color-light);
+  font-weight: 400;
+}
+#recent-projects .projects .projects-item .text .date {
+  color: var(--color-light);
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+#recent-projects .projects .projects-item .text .date i {
+  padding-right: 0.6rem;
+}
+#recent-projects .projects .projects-item .text .projects-footer {
+  text-align: left;
+}
+@media (min-width: 1400px) {
+  #recent-projects .projects {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #recent-projects .projects .projects-item {
+    display: block;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  #recent-projects .projects .projects-item img {
+    width: 100%;
+    height: 100%;
+    width: 30rem;
+    height: 30rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #recent-projects .projects .projects-item .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(79, 89, 85, 0.4196078431);
+    padding: 1.2rem;
+    color: var(--color-light);
+    text-align: left;
+    padding: 2rem;
+  }
+  #recent-projects .projects .projects-item .text .projects-header {
+    text-align: left;
+    color: var(--color-light);
+  }
+  #recent-projects .projects .projects-item .text .date {
+    color: var(--color-light);
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  #recent-projects .projects .projects-item .text .date i {
+    padding-right: 0.6rem;
+  }
+  #recent-projects .projects .projects-item .text .projects-footer {
+    text-align: left;
+  }
 }
 
 .umb-block-grid__layout-container {

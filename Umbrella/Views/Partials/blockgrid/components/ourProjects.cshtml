@@ -1,0 +1,47 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+
+@{
+
+    var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
+    var headline = Model?.Content.Value<string>("headline") ?? "";
+
+	var selection = Umbraco.Content(Guid.Parse("1621f532-a9b9-4e92-8907-0fa867697b45"))
+    .ChildrenOfType("projectItemTemplate")
+    .Where(x => x.IsVisible())
+	.Take(4);
+}
+
+<section id="recent-projects">
+    <div class="projects">
+        @if (selection != null){
+            @foreach (var item in selection) {
+
+            var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+            var premable = item?.Value<string>("premable") ?? "";
+            var date = item?.Value<string>("date") ?? "";
+
+            <a href="@item.Url()">
+                <div class="projects-item">                      
+                    <div class="projects-body">
+                        <img src="@image" alt="item.Name">
+                    </div>
+                    <div class="text">
+                        <div class="projects-header">
+                            <h4>@item.Name()</h4>
+                        </div>
+                        <div class="date">
+                            <p><i class="fa-solid fa-calendar-days"></i>@date</p>
+                        </div>
+                        <div class="projects-footer">
+                            <p>@premable</p>
+                        </div>
+                    </div>                       
+                </div>
+            </a>
+        }
+        }          
+    </div>
+</section>
