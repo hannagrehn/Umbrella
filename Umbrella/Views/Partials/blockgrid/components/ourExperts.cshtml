@@ -1,1 +1,42 @@
-﻿<!-- här ska det skrivas -->
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+
+@{
+    var experts = Model.Content.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("experts");
+    var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
+    var headline = Model?.Content.Value<string>("headline") ?? "";
+}
+
+<section id="our-experts">
+    <div class="container">
+         <div class="headline">
+            <h6>@sectionTitle</h6>
+            <h2 class="title">@headline</h2>
+        </div> 
+        @foreach (var item in experts)
+        {          
+            var fullName = item?.Content.Value<string>("fullName");
+            var fullOccupation = item?.Content.Value<string>("fullOccupation");
+            var thumbnailImage = item?.Content.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+
+            <a href="#">                
+                <div class="expert-item">                      
+                    <div class="expert-body">
+                        <img src="@thumbnailImage" alt="item.fullName">
+                    </div>
+                    <div class="text">
+                        <div class="expert-name">                     
+                            <h4>@fullName</h4>
+                        </div>                       
+                        <div class="expert-occupation">
+                            <p>@fullOccupation</p>                          
+                        </div>
+                    </div>                       
+                </div>
+            </a>           
+        }
+    </div>
+</section>
+
