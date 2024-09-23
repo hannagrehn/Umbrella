@@ -1,5 +1,6 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@model Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent
 @{
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
@@ -86,4 +87,10 @@
         </section>
     </div>
 </section>
+
+@await Html.PartialAsync("partials/static/mrSmile.cshtml")
+
+
+
+
 

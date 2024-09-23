@@ -1,29 +1,90 @@
-#mr-smile{
+#mr-smile {
     display: flex;
-    flex-direction: row;     
+    justify-content: flex-start; 
+    align-items: flex-end; 
+    position: relative;
+    background-color: var(--color-gray);
+    
+    .container {
+    display: flex;
+    align-items: flex-end; 
+    position: relative; 
 
-    .content{
-        display: flex;
-        flex-direction: row;    
-        
-        .east-side{
-            padding-top: 3rem;
-            padding-bottom: 3rem;
+        .picture {
+            position: relative;
+            z-index: 2; 
+            display: none; 
 
-            .smol-things{
+            @include desktop {
+                display: block; 
+                height: 30rem; 
+            }
+
+            img {
+                width: auto;
+                height: 30rem;
+                position: absolute;
+                bottom: 0; 
+            }
+        }
+
+        .triangle {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 0; 
+            display: none; 
+            height: 20rem;     
+            margin-bottom: 5.8rem;
+
+            @include desktop {
+                display: block; 
                 
-                .smol-thing{
-                    display: flex;
+            }
 
-                    i{
-                        padding-right: 1rem;
+        }
+
+        .text {
+            z-index: 3; 
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+       
+            @include desktop {
+                margin-left: 36rem;
+                padding-left: 8rem;
+                max-width: 50%;
+                padding-top: 7rem;
+              
+            }
+
+            .headline {
+                h2 {
+                    padding-bottom: 3rem;
+                }
+            }
+
+            .location, .phone, .email {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.7rem;
+
+                i {
+                    font-size: 1.7rem;
+                    margin-right: 1rem;
+                    color: var(--color-secondary);
+                }
+
+                .info {
+                    h5 {
+                        margin: 0; 
+                    }
+
+                    p {
+                        margin: 5px 0 0;                   
                     }
                 }
             }
         }
-    }
-
-    @include desktop{
-        display: flex;
     }
 }

@@ -166,14 +166,21 @@
 }
 
 #tina-fox{
+
+    img{
+        padding-bottom: 1rem;
+    }
+   
     @include tablet{
         img{
-            padding-right: 5rem;
+            margin-right: 15rem;
+            
         }
     }
 }
 
 #great-reviews{
+    background-color: var(--color-gray);
 
     .background-image{
         display: none;
@@ -198,17 +205,13 @@
         h6{
             padding-top: 3rem;
         }
-
-
     }
 }
 
 
 #recent-projects {
-
     .projects {
         @include center;
-       
 
         .projects-item {
             display: block;  
@@ -233,9 +236,11 @@
                 bottom: 0;
                 width: 100%;
                 background: #4f59556b;
-                padding: 2.2rem;
                 color: var(--color-light);
                 text-align: left;
+                padding-left: 1.5rem;
+                padding-top: 1rem;
+                padding-bottom: 0.5rem;
 
                 .projects-header {
                     text-align: left;
@@ -281,11 +286,10 @@
                     position: absolute;
                     bottom: 0;
                     width: 100%;
-                    background: #4f59556b;
-                    padding: 1.2rem;
+                    background: #4f59556b;       
                     color: var(--color-light);
                     text-align: left;
-                    padding: 2rem;
+                  
 
                     .projects-header {
                         text-align: left;
@@ -309,6 +313,8 @@
         }
     }
 }
+
+
 
 
 
