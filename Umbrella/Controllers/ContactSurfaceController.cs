@@ -21,12 +21,14 @@ namespace Umbrella.Controllers
 			if (!ModelState.IsValid)
 			{
 				ViewData["name"] = form.Name;
+				ViewData["phone"] = form.Phone;
 				ViewData["email"] = form.Email;
-				ViewData["message"] = form.Message;
+				
 
 				ViewData["error_name"] = string.IsNullOrEmpty(form.Name) ? "Name is required" : null;
+				ViewData["error_phone"] = string.IsNullOrEmpty(form.Email) ? "Phone is required" : null;
 				ViewData["error_email"] = string.IsNullOrEmpty(form.Email) ? "Email is required" : null;
-				ViewData["error_message"] = string.IsNullOrEmpty(form.Message) ? "Message is required" : null;
+			
 
 				return CurrentUmbracoPage();
 			}

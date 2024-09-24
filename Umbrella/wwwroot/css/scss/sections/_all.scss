@@ -315,10 +315,190 @@
 }
 
 
-// // här händer det 
+#our-experts{
+    .container{
+        margin-bottom: 3rem;
+
+        // @include mobile{
+        //     grid-template-columns: 1fr;
+        // }
+
+        .headline{  
+            @include center;
+            display: grid;
+            grid-column: auto;
+            margin-bottom: 1rem;
+            padding-top: 3rem;
+            margin-top: 3rem;
+        }
+
+        .expert-item{
+            border: 1px solid #00000013;
+            margin-bottom: 3rem;
+            margin-left: 0.5rem;
+            
+            .img{
+                object-fit: cover;
+
+            }
+
+            .text{
+                padding-left: 1rem;
+                padding-top: 1rem;
+
+                p{
+                    color: gray;
+                }
+            }
+        }
+    }
+}
 
 
+// #contact-us{
 
+//     .bigform{
+//         @include center;
+
+//         .text{           
+//             padding-top: 3rem;
+//             padding-bottom: 2rem;
+//         }
+
+        
+        
+//         .form-items{
+
+//             .success-message{
+//                 color: green;
+//                 padding-top: 1rem;
+//             }
+
+//             .form-input-group{
+
+//                 .form-label{
+
+//                 }
+               
+
+
+//             }
+
+//             // .form-input-group-message{
+
+//             // }
+
+//         }
+
+        
+
+//     }
+
+// }
+
+#contact-us {
+    padding: 4rem 0;
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+  
+      
+      .text {
+        text-align: center;
+        margin-bottom: 2rem;
+  
+        h6 {
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+        }
+  
+        h2 {
+          font-size: 2.5rem;
+          color: #333;
+          margin-bottom: 1rem;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #777;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+  
+      .form-items {
+        max-width: 600px;
+        margin: 0 auto;
+  
+        .success-message {
+          background-color: #dff0d8;
+          color: #3c763d;
+          padding: 1rem;
+          border-radius: 5px;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+  
+        .form-input-group {
+          margin-bottom: 1.5rem;
+  
+   
+          .form-label {
+            display: block;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+          }
+  
+          .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #333;
+            transition: border-color 0.3s ease;
+  
+            &:focus {
+              border-color: #007bff;
+            }
+          }
+  
+         
+          .form-textarea {
+            min-height: 3rem;
+            resize: vertical;
+          }
+  
+          
+          .form-input-error {
+           
+          
+            color: #d9534f;
+            margin-top: 0.5rem;
+  
+            &.form-invalid-input {
+              color: #d9534f;
+            }
+          }
+        }
+  
+        
+        .form-button {
+            @include btn;
+            background-color: var(--color-primary);
+  
+          &:hover {
+            background-color: var(--color-secondary);
+          }
+        }
+      }
+    }
+  }
+  
 
 
 
