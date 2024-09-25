@@ -3,16 +3,18 @@
     h6{
         padding-top: 1rem;
     }
-    .background-image{
-        padding-top: 10rem;    
+
+    img{
+        padding-bottom: 1rem;
     }
+   
 
     @include desktop{
      
         .container{            
             
             h6{                
-                padding-top: 5rem;
+                padding-top: 8rem;
             }
     
             h2{             
@@ -21,12 +23,11 @@
 
             img{
                 padding-top: 1.5rem;
-                padding-bottom: 12.5rem;
+                margin-left: -1rem;                              
             }
 
             p{
-                padding-bottom: 4rem;
-
+                padding-bottom: 3rem;              
             }
         }        
     }  

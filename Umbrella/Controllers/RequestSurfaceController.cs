@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Routing;
@@ -10,24 +10,24 @@ using Umbrella.Models;
 
 namespace Umbrella.Controllers
 {
-	public class ContactSurfaceController : SurfaceController
+	public class RequestSurfaceController : SurfaceController
 	{
-		public ContactSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+		public RequestSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 		{
 		}
 
-		public IActionResult HandleSubmit(ContactFormModel form)
+		public IActionResult HandleSubmit(RequestFormModel form)
 		{
 			if (!ModelState.IsValid)
 			{
 				ViewData["name"] = form.Name;
-				ViewData["phone"] = form.Phone;
 				ViewData["email"] = form.Email;
+                ViewData["phone"] = form.Phone;
 				
 
 				ViewData["error_name"] = string.IsNullOrEmpty(form.Name) ? "Name is required" : null;
-				ViewData["error_phone"] = string.IsNullOrEmpty(form.Email) ? "Phone is required" : null;
 				ViewData["error_email"] = string.IsNullOrEmpty(form.Email) ? "Email is required" : null;
+                ViewData["error_phone"] = string.IsNullOrEmpty(form.Email) ? "Phone is required" : null;
 			
 
 				return CurrentUmbracoPage();
@@ -36,8 +36,8 @@ namespace Umbrella.Controllers
 			TempData["success"] = "Form submitted successfully";
 
 			TempData.Remove("name");
-			TempData.Remove("phone");
 			TempData.Remove("email");
+            TempData.Remove("phone");
 			
 			return RedirectToCurrentUmbracoPage();
 		}

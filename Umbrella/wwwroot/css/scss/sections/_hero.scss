@@ -44,8 +44,14 @@
             a {
 
                 @include btn;
-                background-color: var(--color-primary);         
+                background-color: var(--color-primary);   
+                color: var(--color-accent);      
                 margin-bottom: 1rem;
+
+                &:hover {
+                    background-color: var(--color-secondary);
+                    color: var(--color-primary);
+                }
 
                 @include desktop {
                 margin-top: 1rem;
