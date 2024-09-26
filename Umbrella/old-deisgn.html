@@ -459,68 +459,158 @@
     @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
     @{
     Layout = null;
-    var keywordsList = Model.Value<IEnumerable<string>>("pageKeywords");
-	var keywords = keywordsList != null ? string.Join(", ", keywordsList) : "";
-	var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Onatrix - Very Financial" : "Onatrix - Very Financial";
+    var keywordsList = Model.Value<IEnumerable<string>
+    >("pageKeywords");
+    var keywords = keywordsList != null ? string.Join(", ", keywordsList) : "";
+    var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Onatrix - Very Financial" : "Onatrix - Very Financial";
 
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
+    }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.css">
 
-    <title>@pageTitle</title>
-	<meta name="description" content="@Model.Value("pageDescription")">
-	<meta name="keywords" content="@keywords">
-</head>
+        <title>@pageTitle</title>
+        <meta name="description" content="@Model.Value(" pageDescription")">
+        <meta name="keywords" content="@keywords">
+    </head>
 
-<body>
-	<div class="wrapper">
-		<header>
-			<div class="topbar">
-				<div class="container topbar-stuff">
-					<div>
-						<p>Klarabergsviadukten 90, 111 64 Stockholm</p>
-					</div>
-					<div class="social">
-						<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-						<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-					</div>
-				</div>
-			</div>
-			<div>
-				<div class="container navbar">
-					<img href="/home" src="./design-test-imgs/BrandOna.svg" alt="Onatrix logo" />
-					<div class="navbar-objects">
-						<a href="/aboutPage"><h5>About</h5></a>
-						<a href="/servicePage"><h5>Services</h5></a>
-						<a href="/ourProjectsPage"><h5>Projects</h5></a>
-						<a href="/contactPage"><h5>Contact</h5></a>
-					</div>
-					<h5><i class="fa-solid fa-magnifying-glass"></i></h5>
-				</div>
-			</div>
-		</header>
-		<main>
-			@RenderBody()
-		</main>
-		<footer>
-			<div class="footer">
-				<div class="container">
-					<p>© Onatrix. All Rights Reserved. Credits to <span>Themesflat</span></p>
-				</div>
-			</div>
-		</footer>
-	</div>
-	<script src="/scripts/main.js"></script>
-</body>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="topbar">
+                    <div class="container topbar-stuff">
+                        <div>
+                            <p>Klarabergsviadukten 90, 111 64 Stockholm</p>
+                        </div>
+                        <div class="social">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="container navbar">
+                        <img href="/home" src="./design-test-imgs/BrandOna.svg" alt="Onatrix logo" />
+                        <div class="navbar-objects">
+                            <a href="/aboutPage"><h5>About</h5></a>
+                            <a href="/servicePage"><h5>Services</h5></a>
+                            <a href="/ourProjectsPage"><h5>Projects</h5></a>
+                            <a href="/contactPage"><h5>Contact</h5></a>
+                        </div>
+                        <h5><i class="fa-solid fa-magnifying-glass"></i></h5>
+                    </div>
+                </div>
+            </header>
+            <main>
+                @RenderBody()
+            </main>
+            <footer>
+                <div class="footer">
+                    <div class="container">
+                        <p>© Onatrix. All Rights Reserved. Credits to <span>Themesflat</span></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="/scripts/main.js"></script>
+    </body>
 </html>
 
 
 
-   
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+    @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+    @using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+
+    @{
+
+    bool.TryParse(TempData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(TempData["error_phone"]?.ToString()!, out bool error_phone);
+    bool.TryParse(TempData["error_email"]?.ToString()!, out bool error_email);
+
+
+    var sectionTitle = Model.Content.Value<string>
+        ("sectionTitle") ?? "";
+        var headline = Model.Content.Value<string>
+            ("headline") ?? "";
+            var preamble = Model.Content.Value<string>
+                ("preamble") ?? "";
+                }
+
+
+
+                <section id="contact-us">
+                    <div class="container big-form">
+                        <div class="text">
+                            <h6>@sectionTitle</h6>
+                            <h2>@headline</h2>
+                            <p>@preamble</p>
+                        </div>
+                        <div class="form-items">
+                            @if (TempData["success"] != null && !string.IsNullOrEmpty(TempData["success"].ToString()))
+                            {
+                            <div class="success-message">@TempData["success"]</div>
+                            }
+                            else
+                            {
+                            @using (Html.BeginUmbracoForm("HandleSubmit", "ContactSurface", FormMethod.Post))
+                            {
+                            <div class="form-input-group">
+                                <label class="form-label" for="name">Name</label>
+                                <input id="name" name="name" type="text" placeholder="Name" class="form-input" value="@TempData[" name"]">
+                                @if (error_name)
+                                {
+                                <span class="form-input-error form-invalid-input">You must enter your name</span>
+                                }
+                            </div>
+
+                            <div class="form-input-group">
+                                <label class="form-label" for="phone">Phone</label>
+                                <input id="phone" name="phone" type="text" placeholder="Enter your phone" class="form-input" value="@TempData[" phone"]">
+                                @if (error_phone)
+                                {
+                                <span class="form-input-error form-invalid-input">You must enter your phone</span>
+                                }
+                            </div>
+
+                            <div class="form-input-group">
+                                <label class="form-label" for="phone">Email</label>
+                                <input id="email" name="email" type="text" placeholder="Enter your email address" class="form-input" value="@TempData[" email"]">
+                                @if (error_email)
+                                {
+                                <span class="form-input-error form-invalid-input">You must enter your email</span>
+                                }
+                            </div>
+
+
+                            <div class="form-input-group">
+                                <label class="form-label" for="dropdown">Dropdown here</label>
+                                <select id="dropdown" name="dropdown" class="form-input">
+                                    <option value="">-- Select an option --</option>
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option2">Option 3</option>
+                                    <option value="option2">Option 4</option>
+                                </select>
+                            </div>
+
+
+                            <button type="submit" class="form-button btn-submit">SEND</button>
+
+                            }
+                            }
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
 
