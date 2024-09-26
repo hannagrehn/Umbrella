@@ -13,6 +13,8 @@
 
     var totalItems = selection?.Count() ?? 0;
     var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
+
+  
     
 }
 
@@ -24,63 +26,75 @@
 
 <section id="our-projects">
     <div class="container">
-        <div class="projects">
-            @if (pagedItems != null){
-                @foreach (var item in pagedItems) {
+        <div class="content-wrapper">
+            <div class="projects">
+                @if (pagedItems != null) {
+                    @foreach (var item in pagedItems) {
+                        var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                        var premable = item?.Value<string>("premable") ?? "";
+                        var date = item?.Value<string>("date") ?? "";
 
-                var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
-                var premable = item?.Value<string>("premable") ?? "";
-                var date = item?.Value<string>("date") ?? "";
+                        <a href="@item.Url()">
+                            <div class="projects-item">                      
+                                <div class="projects-body">
+                                    <img src="@image" alt="item.Name">
+                                </div>
+                                <div class="text">
+                                    <div class="projects-header">
+                                        <h4>@item.Name()</h4>
+                                    </div>
+                                    <div class="date">
+                                        <p><i class="fa-solid fa-calendar-days"></i>@date</p>
+                                    </div>
+                                    <div class="projects-footer">
+                                        <p>@premable</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                        </a>
+                    }
+                }          
+            </div>
 
-                <a href="@item.Url()">
-                    <div class="projects-item">                      
-                        <div class="projects-body">
-                            <img src="@image" alt="item.Name">
-                        </div>
-                        <div class="text">
-                            <div class="projects-header">
-                                <h4>@item.Name()</h4>
-                            </div>
-                            <div class="date">
-                                <p><i class="fa-solid fa-calendar-days"></i>@date</p>
-                            </div>
-                            <div class="projects-footer">
-                                <p>@premable</p>
-                            </div>
-                        </div>                       
+            <aside id="our-projects-aside">
+                <div class="tags-section">
+                    <h4>Tags</h4>
+                    <div class="tags">
+                        <p>Report</p>
+                        <p>Business plans</p>
+                        <p>Insights</p>
+                        <p>Business</p>
+                        <p>App</p>
+                        <p>Project</p>
+                        <p>Finance</p>
+                        <p>Pricing</p>
                     </div>
-                </a>
-            }
-            }          
+                </div>
+
+                @await Html.PartialAsync("partials/static/supportBox.cshtml")
+                           
+            </aside>
         </div>
 
         <section class="pagination">
             <div class="container">
-
-                @if (currentPage > 1)
-                {
+                @if (currentPage > 1) {
                     <h5><a href="?page=@(currentPage - 1)" class="change">Prev</a></h5>
-                }
-                else
-                {
+                } else {
                     <h5><span class="change inactive">Prev</span></h5>
                 }
 
                 <ul class="pages">
-                    @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
-                    {
+                    @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++) {
                         <li class="@((i == currentPage) ? "number active" : "number")">
                             <a href="?page=@i">@i</a>
                         </li>
                     }
                 </ul>
 
-                @if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
-                {
+                @if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage)) {
                    <h5><a class="change" href="?page=@(currentPage + 1)">Next</a> </h5>
-                }
-                else 
-                {
+                } else {
                     <h5><span class="change inactive">Next</span></h5>
                 }
             </div>
@@ -88,7 +102,10 @@
     </div>
 </section>
 
+
+
 @await Html.PartialAsync("partials/static/mrSmile.cshtml")
+
 
 
 

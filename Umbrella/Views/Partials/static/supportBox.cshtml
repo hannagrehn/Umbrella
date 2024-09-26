@@ -1,0 +1,25 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper;
+
+@{
+    bool.TryParse(TempData["error_email"]?.ToString()!, out bool error_email);
+}
+
+<div class="support-box">
+    <h4>How can we help you?</h4>
+    <p>Online support 24/7, we are here to assist you.</p>
+    <form action="/" method="POST" class="form-input-group" onsubmit="sendEmail(); return false;">
+        <div class="input-wrapper">
+            <input id="email" name="email" type="text" placeholder="Email address" class="form-input" value="@TempData["email"]">
+            <button type="submit" id="send-email" class="send-email-btn">
+                <i class="fa-regular fa-envelope"></i>
+            </button>
+        </div>
+
+        @if (error_email) {
+            <span class="form-input-error form-invalid-input">You must enter a valid email address</span>
+        }
+    </form>
+</div>
