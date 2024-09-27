@@ -592,42 +592,37 @@
 }
 
 
-
 #service-item-form {
     
     .big-form {   
         display: flex;
-        align-items: center;
-
+        flex-direction: column;
+        align-items: left;
+        margin-top: 3rem;
 
         .form-items {
             @include center;
             width: 100%; 
-            display: grid;
-            grid-gap: 1.5rem;
+            display: grid; 
             grid-template-columns: 1fr; 
-
+          
             @include desktop {  
-                padding: 2rem;
-
-                .form-button {
-                    grid-column: span 2;
-                    
-                }
+                padding: 0;        
             }
 
             .form-input-groups{
                 display: grid;
                 grid-template-columns: 1fr;
+                
 
                 @include desktop{
                     display: grid;
-                    grid-template-columns: 1fr 1fr;                 
+                    grid-template-columns: 1fr 1fr;    
+                    gap: 1rem;             
                 }
 
                 .form-input-group {                  
                     margin-top: 1rem;
-                    margin-right: 1rem;
     
                     @include desktop {
                         width: auto; 
@@ -635,10 +630,11 @@
                 }
             }
 
-            .form-input-message{
-
+            textarea{
+                margin-top: 1rem;
+           
                 @include desktop{
-                    height: 20rem;               
+                    height: 10rem;               
                 }
             }
 
@@ -677,10 +673,12 @@
 
             .form-button {
                 @include btn;
+                align-items: left;
                 background-color: var(--color-primary);
                 color: var(--color-accent);
                 transition: background-color 0.2s ease;
                 margin-top: 1rem;
+                margin-bottom: 2rem;
 
                 &:hover {
                     background-color: var(--color-secondary);
@@ -694,193 +692,193 @@
 
 
 
-// #support-box {
-//     width: 100%; 
-//     height: 15rem;
-//     background-color: var(--color-primary);
-//     border-radius: 4px;
-//     padding: 1.2rem;
-//     margin-top: 2rem;
-//     text-align: left;
+#support-box {
+    width: 100%; 
+    height: 15rem;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    text-align: left;
 
-//     h4 {
-//         color: var(--color-accent);
-//         font-weight: 500;
-//     }
+    h4 {
+        color: var(--color-accent);
+        font-weight: 500;
+    }
 
-//     p {
-//         color: var(--color-light);
-//         padding-bottom: 2.6rem;
-//     }
+    p {
+        color: var(--color-light);
+        padding-bottom: 2.6rem;
+    }
 
-//     .success-message {
-//         background-color: #dff0d8;
-//         color: #3c763d;
-//         padding: 1rem;
-//         border-radius: 5px;
-//         text-align: center;
-//         margin-bottom: 2rem;
-//         grid-column: span 2;
-//     }
+    .success-message {
+        background-color: #dff0d8;
+        color: #3c763d;
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 2rem;
+        grid-column: span 2;
+    }
 
-//     .form-input,
-//     .form-textarea {
-//         width: 100%;
-//         padding: 1rem;
-//         border: 1px solid #ccc;
-//         border-radius: 3px;
-//         font-size: 0.9rem;
-//         color: #333333b4;
-//         transition: border-color 0.3s ease;
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        color: #333333b4;
+        transition: border-color 0.3s ease;
 
-//         &:focus {
-//             border-color: var(--color-secondary);
-//         }
-//     }
+        &:focus {
+            border-color: var(--color-secondary);
+        }
+    }
 
-//     .form-input-error {
-//         color: #d9534f;
-//         margin-top: 0.5rem;
+    .form-input-error {
+        color: #d9534f;
+        margin-top: 0.5rem;
 
-//         &.form-invalid-input {
-//             color: #d9534f;
-//         }
-//     }
+        &.form-invalid-input {
+            color: #d9534f;
+        }
+    }
 
-//     .form-input-group {
-//         .input-wrapper {
-//             position: relative;
+    .form-input-group {
+        .input-wrapper {
+            position: relative;
 
-//             .form-input {
-//                 width: 100%;
-//                 padding: 1.1rem 2.5rem 1.1rem 1rem;  
-//                 border: 1px solid #ccc;
-//                 border-radius: 3px;
-//                 font-size: 0.9rem;
-//                 color: #333333b4;
-//                 transition: border-color 0.3s ease;
+            .form-input {
+                width: 100%;
+                padding: 1.1rem 2.5rem 1.1rem 1rem;  
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 0.9rem;
+                color: #333333b4;
+                transition: border-color 0.3s ease;
 
-//                 &:focus {
-//                     border-color: var(--color-secondary);
-//                 }
-//             }
+                &:focus {
+                    border-color: var(--color-secondary);
+                }
+            }
 
-//             .send-email-btn {
-//                 position: absolute;
-//                 right: 0.75rem;
-//                 top: 50%;
-//                 transform: translateY(-50%);
-//                 background: none;
-//                 border: none;
-//                 color: #333333b4;
-//                 font-size: 1.25rem;
-//                 cursor: pointer;
+            .send-email-btn {
+                position: absolute;
+                right: 0.75rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                color: #333333b4;
+                font-size: 1.25rem;
+                cursor: pointer;
 
-//                 &:hover {
-//                     color: var(--color-secondary);
-//                 }
+                &:hover {
+                    color: var(--color-secondary);
+                }
 
-//                 i {
-//                     pointer-events: none; 
-//                 }
-//             }
-//         }
-//     }
-// }
+                i {
+                    pointer-events: none; 
+                }
+            }
+        }
+    }
+}
 
-// .support-box {
-//     width: 100%; 
-//     height: 15rem;
-//     background-color: var(--color-primary);
-//     border-radius: 4px;
-//     padding: 1.2rem;
-//     margin-top: 2rem;
-//     text-align: left;
+.support-box {
+    width: 100%; 
+    height: 15rem;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    text-align: left;
 
-//     h4 {
-//         color: var(--color-accent);
-//         font-weight: 500;
-//     }
+    h4 {
+        color: var(--color-accent);
+        font-weight: 500;
+    }
 
-//     p {
-//         color: var(--color-light);
-//         padding-bottom: 2.6rem;
-//     }
+    p {
+        color: var(--color-light);
+        padding-bottom: 2.6rem;
+    }
 
-//     .success-message {
-//         background-color: #dff0d8;
-//         color: #3c763d;
-//         padding: 1rem;
-//         border-radius: 5px;
-//         text-align: center;
-//         margin-bottom: 2rem;
-//         grid-column: span 2;
-//     }
+    .success-message {
+        background-color: #dff0d8;
+        color: #3c763d;
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 2rem;
+        grid-column: span 2;
+    }
 
-//     .form-input,
-//     .form-textarea {
-//         width: 100%;
-//         padding: 1rem;
-//         border: 1px solid #ccc;
-//         border-radius: 3px;
-//         font-size: 0.9rem;
-//         color: #333333b4;
-//         transition: border-color 0.3s ease;
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        color: #333333b4;
+        transition: border-color 0.3s ease;
 
-//         &:focus {
-//             border-color: var(--color-secondary);
-//         }
-//     }
+        &:focus {
+            border-color: var(--color-secondary);
+        }
+    }
 
-//     .form-input-error {
-//         color: #d9534f;
-//         margin-top: 0.5rem;
+    .form-input-error {
+        color: #d9534f;
+        margin-top: 0.5rem;
 
-//         &.form-invalid-input {
-//             color: #d9534f;
-//         }
-//     }
+        &.form-invalid-input {
+            color: #d9534f;
+        }
+    }
 
-//     .form-input-group {
-//         .input-wrapper {
-//             position: relative;
+    .form-input-group {
+        .input-wrapper {
+            position: relative;
 
-//             .form-input {
-//                 width: 100%;
-//                 padding: 1.1rem 2.5rem 1.1rem 1rem;  
-//                 border: 1px solid #ccc;
-//                 border-radius: 3px;
-//                 font-size: 0.9rem;
-//                 color: #333333b4;
-//                 transition: border-color 0.3s ease;
+            .form-input {
+                width: 100%;
+                padding: 1.1rem 2.5rem 1.1rem 1rem;  
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 0.9rem;
+                color: #333333b4;
+                transition: border-color 0.3s ease;
 
-//                 &:focus {
-//                     border-color: var(--color-secondary);
-//                 }
-//             }
+                &:focus {
+                    border-color: var(--color-secondary);
+                }
+            }
 
-//             .send-email-btn {
-//                 position: absolute;
-//                 right: 0.75rem;
-//                 top: 50%;
-//                 transform: translateY(-50%);
-//                 background: none;
-//                 border: none;
-//                 color: #333333b4;
-//                 font-size: 1.25rem;
-//                 cursor: pointer;
+            .send-email-btn {
+                position: absolute;
+                right: 0.75rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                color: #333333b4;
+                font-size: 1.25rem;
+                cursor: pointer;
 
-//                 &:hover {
-//                     color: var(--color-secondary);
-//                 }
+                &:hover {
+                    color: var(--color-secondary);
+                }
 
-//                 i {
-//                     pointer-events: none; 
-//                 }
-//             }
-//         }
-//     }
-// }
+                i {
+                    pointer-events: none; 
+                }
+            }
+        }
+    }
+}
 
 
 

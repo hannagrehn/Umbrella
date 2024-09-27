@@ -16,18 +16,18 @@ namespace Umbrella.Controllers
 		{
 		}
 
-		public IActionResult HandleSubmit(RequestFormModel form)
+		public IActionResult HandleSubmit(ServiceItemModel form)
 		{
 			if (!ModelState.IsValid)
 			{
 				ViewData["name"] = form.Name;
 				ViewData["email"] = form.Email;
-                //ViewData["message"] = form.Message;
+                ViewData["message"] = form.Message;
 				
 
 				ViewData["error_name"] = string.IsNullOrEmpty(form.Name) ? "Name is required" : null;
 				ViewData["error_email"] = string.IsNullOrEmpty(form.Email) ? "Email is required" : null;
-                //ViewData["error_message"] = string.IsNullOrEmpty(form.Message) ? "Message is required" : null;
+                ViewData["error_message"] = string.IsNullOrEmpty(form.Message) ? "Message is required" : null;
 			
 
 				return CurrentUmbracoPage();
