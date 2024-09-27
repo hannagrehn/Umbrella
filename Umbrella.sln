@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbrella", "Umbrella\Umbrella.csproj", "{488EBEA6-8BFD-4554-AC89-ED1EF29CD6ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbrella", "Umbrella\Umbrella.csproj", "{488EBEA6-8BFD-4554-AC89-ED1EF29CD6ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailProvider", "EmailProvider\EmailProvider.csproj", "{C919403F-27CB-4113-AD22-33A80803FA8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{488EBEA6-8BFD-4554-AC89-ED1EF29CD6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{488EBEA6-8BFD-4554-AC89-ED1EF29CD6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{488EBEA6-8BFD-4554-AC89-ED1EF29CD6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C919403F-27CB-4113-AD22-33A80803FA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C919403F-27CB-4113-AD22-33A80803FA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C919403F-27CB-4113-AD22-33A80803FA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C919403F-27CB-4113-AD22-33A80803FA8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
