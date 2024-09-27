@@ -7,6 +7,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbrella.Models;
+using Umbrella.Services;
 
 namespace Umbrella.Controllers
 {
@@ -16,7 +17,7 @@ namespace Umbrella.Controllers
 		{
 		}
 
-		public IActionResult HandleSubmit(RequestFormModel form)
+		public async Task<IActionResult> HandleSubmit(RequestFormModel form)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -33,13 +34,25 @@ namespace Umbrella.Controllers
 				return CurrentUmbracoPage();
 			}
 
-			TempData["success"] = "Form submitted successfully";
+			EmailService emailService = new EmailService();
+			var result = await emailService.SendEmailAsync(form.Email, form.Name);
 
-			TempData.Remove("name");
-			TempData.Remove("email");
-            TempData.Remove("phone");
-			
-			return RedirectToCurrentUmbracoPage();
+            if (result)
+            {
+				TempData["success"] = "Form submitted successfully";
+
+				TempData.Remove("name");
+				TempData.Remove("email");
+				TempData.Remove("phone");
+
+				return RedirectToCurrentUmbracoPage();
+
+			}
+			else
+			{
+				TempData["success"] = "An error occurred while submitting the form";
+				return RedirectToCurrentUmbracoPage();
+			}         
 		}
 	}
 }

@@ -7,6 +7,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 using Umbrella.Models;
+using Umbrella.Services;  
 
 namespace Umbrella.Controllers
 {
@@ -16,30 +17,40 @@ namespace Umbrella.Controllers
 		{
 		}
 
-		public IActionResult HandleSubmit(ServiceItemModel form)
+		public async Task<IActionResult> HandleSubmit(ServiceItemModel form)
 		{
+			
 			if (!ModelState.IsValid)
 			{
 				ViewData["name"] = form.Name;
 				ViewData["email"] = form.Email;
-                ViewData["message"] = form.Message;
-				
+				ViewData["message"] = form.Message;
 
 				ViewData["error_name"] = string.IsNullOrEmpty(form.Name) ? "Name is required" : null;
 				ViewData["error_email"] = string.IsNullOrEmpty(form.Email) ? "Email is required" : null;
-                ViewData["error_message"] = string.IsNullOrEmpty(form.Message) ? "Message is required" : null;
-			
+				ViewData["error_message"] = string.IsNullOrEmpty(form.Message) ? "Message is required" : null;
 
 				return CurrentUmbracoPage();
 			}
 
-			TempData["success"] = "Form submitted successfully";
+			EmailService emailService = new EmailService();
+			var result = await emailService.SendEmailAsync(form.Email, form.Name);
 
-			TempData.Remove("name");
-			TempData.Remove("email");
-            TempData.Remove("message");
-			
-			return RedirectToCurrentUmbracoPage();
+			if (result)
+			{
+				TempData["success"] = "Form submitted successfully";
+
+				TempData.Remove("name");
+				TempData.Remove("email");
+				TempData.Remove("message");
+
+				return RedirectToCurrentUmbracoPage();
+			}
+			else
+			{
+				TempData["success"] = "An error occurred while submitting the form";
+				return RedirectToCurrentUmbracoPage();
+			}
 		}
 	}
 }

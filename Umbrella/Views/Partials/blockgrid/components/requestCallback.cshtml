@@ -27,7 +27,7 @@
 			}
 			else
 			{
-				@using (Html.BeginUmbracoForm("HandleSubmit", "ContactSurface", FormMethod.Post))
+				@using (Html.BeginUmbracoForm("HandleSubmit", "RequestSurface", FormMethod.Post))
 				{
 					<div class="form-input-group">
 						<input id="name" name="name" type="text" placeholder="Name" class="form-input" value="@TempData["name"]">
