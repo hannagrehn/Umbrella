@@ -880,5 +880,85 @@
     }
 }
 
+//wilil this work?? 
+//we dont know until scss starts to ??? kick in god fucking dammit
+
+#projects-details {
+    background-color: blue;
+    .container {
+        background-color: blue;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .explosive-content {
+            width: 80%;
+        }
+
+        aside {
+            width: 20%;
+
+            .recent-projects {
+                h4 {
+                    padding: 0;
+                   
+                }
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 1rem; 
+                    text-align: left;
+
+                    img {
+                        height: 3rem; 
+                        width: 3rem; 
+                        margin-right: 0.5rem;
+                        object-fit: cover; 
+                    }
+
+                    .item-text-box {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        h5 {
+                            color: #333;
+                            margin: 0;
+                        }
+
+                        .p-date {
+                            color: #666;
+                            font-size: 0.9rem; 
+                        }
+                    }
+                }
+            }
+
+            .tag-row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 0.5rem;
+
+                p {
+                    margin: 0.2rem 0.5rem;
+                    background-color: #f3f3f3;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                }
+            }
+
+            
+            .support-box {
+                margin-top: 2rem; 
+            }
+        }
+    }
+}
+
 
 

@@ -2383,6 +2383,85 @@ h6 {
   pointer-events: none;
 }
 
+#projects-details {
+  background-color: blue;
+}
+#projects-details .container {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1400px) {
+  #projects-details .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+#projects-details .container .explosive-content {
+  width: 80%;
+}
+#projects-details .container aside {
+  width: 20%;
+}
+#projects-details .container aside .recent-projects h4 {
+  padding: 0;
+}
+#projects-details .container aside .recent-projects a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+#projects-details .container aside .recent-projects a img {
+  height: 3rem;
+  width: 3rem;
+  margin-right: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#projects-details .container aside .recent-projects a .item-text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#projects-details .container aside .recent-projects a .item-text-box h5 {
+  color: #333;
+  margin: 0;
+}
+#projects-details .container aside .recent-projects a .item-text-box .p-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+#projects-details .container aside .tag-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+#projects-details .container aside .tag-row p {
+  margin: 0.2rem 0.5rem;
+  background-color: #f3f3f3;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+#projects-details .container aside .support-box {
+  margin-top: 2rem;
+}
+
 #trusted {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3390,6 +3469,85 @@ h6 {
 }
 .support-box .form-input-group .input-wrapper .send-email-btn i {
   pointer-events: none;
+}
+
+#projects-details {
+  background-color: blue;
+}
+#projects-details .container {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1400px) {
+  #projects-details .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+#projects-details .container .explosive-content {
+  width: 80%;
+}
+#projects-details .container aside {
+  width: 20%;
+}
+#projects-details .container aside .recent-projects h4 {
+  padding: 0;
+}
+#projects-details .container aside .recent-projects a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+#projects-details .container aside .recent-projects a img {
+  height: 3rem;
+  width: 3rem;
+  margin-right: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#projects-details .container aside .recent-projects a .item-text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#projects-details .container aside .recent-projects a .item-text-box h5 {
+  color: #333;
+  margin: 0;
+}
+#projects-details .container aside .recent-projects a .item-text-box .p-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+#projects-details .container aside .tag-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+#projects-details .container aside .tag-row p {
+  margin: 0.2rem 0.5rem;
+  background-color: #f3f3f3;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+#projects-details .container aside .support-box {
+  margin-top: 2rem;
 }
 
 .umb-block-grid__layout-container {
