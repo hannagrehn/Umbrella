@@ -881,7 +881,6 @@
 }
 
 
-
 #projects-details {
   
     .container {
@@ -890,21 +889,23 @@
 
         @include desktop {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 1fr;
+            margin-bottom: 3rem;
         }
 
         .explosive-content {
           
             @include desktop{
                 width: 100%;
-                padding-right: 1rem;
+                padding-right: 2rem;
+                margin-right: 2rem;
             }
         }
 
         aside { 
 
             @include desktop{
-                width: 60%;
+                width: 100%;
                 border-left: 1px solid #00000013;
                 padding-left: 1.5rem;
             }
@@ -982,8 +983,7 @@
             @include desktop {
                 grid-column: 2;
                 border-left: 1px solid #00000013; 
-                padding-left: 1.5rem;
-               
+                padding-left: 1.5rem;        
             }
         }
 
@@ -998,12 +998,12 @@
                 }
     
                 h4 {
-                    padding-bottom: 1rem;
+                    padding-bottom: 0.7rem;
                 }
     
                 img {
-                    height: 6rem;
-                    width: 8rem;
+                    height: auto;
+                    width: 100%;
                 }
     
                 p {
@@ -1011,12 +1011,10 @@
                 }
     
                 .support-box {
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                 }
             }
-        }
-
-        
+        }     
     }
 }
 

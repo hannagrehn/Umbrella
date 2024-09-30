@@ -1,13 +1,11 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper;
+
 
 @{
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model.Name;
 
-    var rootContents = UmbracoHelper.ContentAtRoot();
     var image = Umbraco.Media(Guid.Parse("664233f6-2c5e-494e-9f6d-70002772a24e")) as Image;
 }
 
@@ -21,7 +19,7 @@
         <aside>
             <div class="aside-content">
                 <h4>About us</h4>
-                <img src="@image">
+                <img src="@image.Url()">
                 <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
                 @await Html.PartialAsync("partials/static/supportBox.cshtml") 
             </div>

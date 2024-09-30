@@ -2390,18 +2390,20 @@ h6 {
 @media (min-width: 1400px) {
   #projects-details .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    margin-bottom: 3rem;
   }
 }
 @media (min-width: 1400px) {
   #projects-details .container .explosive-content {
     width: 100%;
-    padding-right: 1rem;
+    padding-right: 2rem;
+    margin-right: 2rem;
   }
 }
 @media (min-width: 1400px) {
   #projects-details .container aside {
-    width: 60%;
+    width: 100%;
     border-left: 1px solid rgba(0, 0, 0, 0.0745098039);
     padding-left: 1.5rem;
   }
@@ -2497,17 +2499,17 @@ h6 {
   }
 }
 #service-details .container aside .aside-content h4 {
-  padding-bottom: 1rem;
+  padding-bottom: 0.7rem;
 }
 #service-details .container aside .aside-content img {
-  height: 6rem;
-  width: 8rem;
+  height: auto;
+  width: 100%;
 }
 #service-details .container aside .aside-content p {
   margin-top: 1rem;
 }
 #service-details .container aside .aside-content .support-box {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 #trusted {
@@ -3526,18 +3528,20 @@ h6 {
 @media (min-width: 1400px) {
   #projects-details .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    margin-bottom: 3rem;
   }
 }
 @media (min-width: 1400px) {
   #projects-details .container .explosive-content {
     width: 100%;
-    padding-right: 1rem;
+    padding-right: 2rem;
+    margin-right: 2rem;
   }
 }
 @media (min-width: 1400px) {
   #projects-details .container aside {
-    width: 60%;
+    width: 100%;
     border-left: 1px solid rgba(0, 0, 0, 0.0745098039);
     padding-left: 1.5rem;
   }
@@ -3633,17 +3637,17 @@ h6 {
   }
 }
 #service-details .container aside .aside-content h4 {
-  padding-bottom: 1rem;
+  padding-bottom: 0.7rem;
 }
 #service-details .container aside .aside-content img {
-  height: 6rem;
-  width: 8rem;
+  height: auto;
+  width: 100%;
 }
 #service-details .container aside .aside-content p {
   margin-top: 1rem;
 }
 #service-details .container aside .aside-content .support-box {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .umb-block-grid__layout-container {
